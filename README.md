@@ -1,5 +1,9 @@
 **DE⫶TR**: End-to-End Object Detection with Transformers
 
+run: python -m torch.distributed.run --nproc_per_node=1 main.py --coco_path "data/UATD_Training"
+
+evaluate: python main.py --batch_size 2 --no_aux_loss --eval --resume https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth --coco_path "data/UATD_Training"
+
 [![Support Ukraine](https://img.shields.io/badge/Support-Ukraine-FFD500?style=flat&labelColor=005BBB)](https://opensource.fb.com/support-ukraine)
 
 PyTorch training code and pretrained models for **DETR** (**DE**tection **TR**ansformer).
