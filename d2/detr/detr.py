@@ -134,6 +134,7 @@ class Detr(nn.Module):
         self.detr.to(self.device)
 
         # building criterion
+        # TODO Mitch This is causing indices to be empty.
         matcher = HungarianMatcher(cost_class=1, cost_bbox=l1_weight, cost_giou=giou_weight)
         weight_dict = {"loss_ce": 1, "loss_bbox": l1_weight}
         weight_dict["loss_giou"] = giou_weight
